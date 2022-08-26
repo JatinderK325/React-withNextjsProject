@@ -1,7 +1,16 @@
 import Card from '../ui/Card';
+import { useRouter } from 'next/router';
 import classes from './MeetupItem.module.css';
 
 function MeetupItem(props) {
+  const router = useRouter();
+
+  const showDetailsHandler = () => {
+    // we can call methods for navigation on router object.
+    // push takes path that shd be meetupId becoz we have meetupId page and we are getting id by props.
+    router.push('/' + props.id); // constructing dynamic path using props.id
+  };
+
   return (
     <li className={classes.item}>
       <Card>
@@ -13,7 +22,7 @@ function MeetupItem(props) {
           <address>{props.address}</address>
         </div>
         <div className={classes.actions}>
-          <button>Show Details</button>
+          <button onClick={showDetailsHandler}>Show Details</button>
         </div>
       </Card>
     </li>
