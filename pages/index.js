@@ -20,12 +20,25 @@ const DUMMY_MEETUPS = [
 ];
 
 
-function HomePage() {
+function HomePage(props) {
     return (
         // <Layout>
-        <MeetupList meetups={DUMMY_MEETUPS}></MeetupList>
+        <MeetupList meetups={props.meetups}></MeetupList>
         // </Layout>
     );
+}
+
+// we can use this function only in the components of 'pages' folder. If nextJs finds this function then it will first of all always call this function before it calls the component function.
+
+export async function getStaticProps() {
+    // fetch data from an API
+    // once we are done with the data we need, we need to return an object always.
+    return {
+        // set props property here. props holds the other object which will be the props object that we receive in our component function i.e 'HomePage'.
+        props: {
+            meetups: DUMMY_MEETUPS
+        }
+    };
 }
 
 export default HomePage;
