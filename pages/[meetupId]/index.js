@@ -32,7 +32,7 @@ export async function getStaticPaths() {
 
 // here we are fetching data for a meetup detail so we need to use 'getStaticProps()' here.
 export async function getStaticProps(context) {
-    // fetch data from an api
+    // fetch data from an api for a single meetup.
     const meetupId = context.params.meetupId;
     console.log(meetupId);
 
