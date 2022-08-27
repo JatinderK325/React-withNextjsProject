@@ -61,7 +61,7 @@ export async function getStaticProps() {
             }))
         },
         // this property is used when we want to re-generate pre-rendered page every 10 seconds in order to get updated if there are data changes.
-        revalidate: 10
+        revalidate: 1
     };
 }
 
