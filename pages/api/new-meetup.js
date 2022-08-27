@@ -3,12 +3,12 @@
 import { MongoClient } from "mongodb";
 
 async function handler(req, res) {
+    // to add new meetup in the database.
     if (req.method === 'POST') {
         const data = req.body;
 
         // connect returns a promise hence we can turn our handler function into async function to use await. This gives us connected client.
         const client = await MongoClient.connect('mongodb+srv://jatinder:jatinder123@cluster0.dnaxppe.mongodb.net/meetups?retryWrites=true&w=majority');
-        console.log(client);
 
         // on this client object, we can call db method to get hold of that database to which we are connecting here.
         const db = client.db();
