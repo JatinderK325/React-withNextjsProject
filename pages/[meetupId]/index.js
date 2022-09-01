@@ -21,7 +21,7 @@ function MeetupDetails(props) {
 }
 
 export async function getStaticPaths() {
-    const client = await MongoClient.connect('mongodb+srv://jatinder:jatinder123@cluster0.dnaxppe.mongodb.net/meetups?retryWrites=true&w=majority');
+    const client = await MongoClient.connect('mongodb+srv://jatinder:c0JEDfHimrRtXYry@cluster0.dnaxppe.mongodb.net/meetups?retryWrites=true&w=majority');
 
     const db = client.db();
     const meetupsCollection = db.collection('meetups');
@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     // fetch data from an api for a single meetup.
     const meetupId = context.params.meetupId;
-    const client = await MongoClient.connect('mongodb+srv://jatinder:jatinder123@cluster0.dnaxppe.mongodb.net/meetups?retryWrites=true&w=majority');
+    const client = await MongoClient.connect('mongodb+srv://jatinder:c0JEDfHimrRtXYry@cluster0.dnaxppe.mongodb.net/meetups?retryWrites=true&w=majority');
 
     const db = client.db();
     const meetupsCollection = db.collection('meetups');
