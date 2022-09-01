@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import classes from './MeetupDetail.module.css';
+import classes from './meetupDetail.module.css';
 
 function MeetupDetail(props) {
     return (
