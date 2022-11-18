@@ -41,7 +41,7 @@ export async function getServerSideProps(context){
 
 export async function getStaticProps() {
     // fetch data(meetups) from an API.
-    const client = await MongoClient.connect('mongodb+srv://jatinder:c0JEDfHimrRtXYry@cluster0.dnaxppe.mongodb.net/meetups?retryWrites=true&w=majority');
+    const client = await MongoClient.connect('mongodb+srv://jk:c0JEDfHimrRtXYry@cluster0.dnaxppe.mongodb.net/meetups?retryWrites=true&w=majority');
 
     const db = client.db();
     const meetupsCollection = db.collection('meetups');
